@@ -96,7 +96,6 @@ function createTDElement(contact, parentElement) {
                 })
                 .catch(err => console.log(err))
         })
-
     })
     tdActions.appendChild(tdEditBtn)
 
@@ -105,13 +104,11 @@ function createTDElement(contact, parentElement) {
     tdDeleteBtn.className = 'btn btn-danger mx-1'
     tdDeleteBtn.innerHTML = 'Delete'
     tdDeleteBtn.addEventListener('click', function () {
-
         axios.delete(`${BASE_URL}/${contact.id}`)
             .then(res => {
                 parentElement.removeChild(TR)
             })
             .catch(err => console.log(err))
-
     })
     tdActions.appendChild(tdDeleteBtn)
     TR.appendChild(tdActions)
